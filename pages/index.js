@@ -21,20 +21,13 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
-        <button
-          onClick={() => {
-            console.log('hi');
-          }}
-        >
-          Sign In
-        </button>
 
         <button
           onClick={(e) => {
-            console.log('');
+            auth.signinWithGithub();
           }}
         >
-          signin
+          Sign In
         </button>
 
         {auth?.user && (
@@ -46,7 +39,6 @@ export default function Home() {
             SignOut
           </button>
         )}
-
         <div>{auth?.user?.email}</div>
       </main>
 
